@@ -47,17 +47,14 @@ avr_vcd_t vcd_file;
 int main(int argc, char *argv[])
 {
 //		elf_firmware_t f;
-    fprintf(stderr, "stage %d\n" , 0);
 
 	avr = avr_make_mcu_by_name("atmega32u4");
 	if (!avr) {
 		fprintf(stderr, "%s: Error creating the AVR core\n", argv[0]);
 		exit(1);
 	}
-    fprintf(stderr, "stage %d\n" , 1);
 	avr_init(avr);
 	avr->frequency = 16000000;
-    fprintf(stderr, "stage %d\n" , 2);
 
 	// this trick creates a file that contains /and keep/ the flash
 	// in the same state as it was before. This allow the bootloader
@@ -79,7 +76,6 @@ int main(int argc, char *argv[])
 		avr->codeend = avr->flashend;
 	}
 
-    fprintf(stderr, "stage %d\n" , 3);
 	// even if not setup at startup, activate gdb if crashing
 	avr->gdb_port = 1234;
 	if (0) {
@@ -87,11 +83,8 @@ int main(int argc, char *argv[])
 		avr_gdb_init(avr);
 	}
 
-    fprintf(stderr, "stage %d\n" , 4);
 	vhci_usb_init(avr, &vhci_usb);
-    fprintf(stderr, "stage %d\n" , 5);
 	vhci_usb_connect(&vhci_usb, '0');
-    fprintf(stderr, "stage %d\n" , 6);
 
 
 	while (1) {
