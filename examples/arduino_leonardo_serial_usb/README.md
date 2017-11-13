@@ -6,7 +6,7 @@ Uses the arduino enviroment to build the [test sketch](test/test.ino)
 
 # Requirements
 
-First clone this simavr repo and build it (cd simavr; make)
+First clone this simavr repo and build it (cd simavr; make). It's safe to ignore any failed tests!
 
 Then go to this example: cd examples/arduino_leonardo_serial_usb
 
