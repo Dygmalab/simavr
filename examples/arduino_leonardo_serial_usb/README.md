@@ -6,7 +6,11 @@ Uses the arduino enviroment to build the [test sketch](test/test.ino)
 
 # Requirements
 
-download Arduino-1.8.5 to this directory
+First clone this simavr repo and build it (cd simavr; make)
+
+Then go to this example: cd examples/arduino_leonardo_serial_usb
+
+Download and unpack Arduino-1.8.5 to this directory
 
 run `make` to build the virtual usb drivers
 
