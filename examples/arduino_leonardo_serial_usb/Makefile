@@ -60,9 +60,15 @@ ${arduino_builder}:
 ${firmware}: ${arduino_builder}
 	./arduino-1.8.5/arduino-builder -build-options-file ./build.options.json -build-path ${CURDIR}/output test/test.ino
 
-test:
-	-sudo insmod ../vhci/vhci-hcd-1.14/usb-vhci-iocifc.ko
+modules:
 	-sudo insmod ../vhci/vhci-hcd-1.14/usb-vhci-hcd.ko
+	-sudo insmod ../vhci/vhci-hcd-1.14/usb-vhci-iocifc.ko
+
+rmmodules:
+	-sudo rmmod usb-vhci-iocifc
+	-sudo rmmod usb-vhci-hcd
+
+test: modules
 	@echo "-----------------------------------"
 	@echo "start something listening on the new serial port: miniterm.py /dev/ttyACM0 115200"
 	sudo ${board}
