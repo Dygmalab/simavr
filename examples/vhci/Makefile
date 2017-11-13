@@ -18,9 +18,9 @@ all: library
 module: vhci-hcd-$(HCD_V)/usb-vhci-hcd.ko
 
 vhci-hcd-$(HCD_V)/usb-vhci-hcd.ko: vhci-hcd-$(HCD_V)
-	$(MAKE) -C vhci-hcd-$(HCD_V) \
-		KDIR=/lib/modules/${shell uname -r}/build \
-		CORE_INCLUDE_DIR=$(PWD)/vhci-hcd-$(HCD_V)/linux/2.6.32/drivers/usb/core
+	$(MAKE) -C vhci-hcd-$(HCD_V) #\
+#		KDIR=/lib/modules/${shell uname -r}/build \
+#		CORE_INCLUDE_DIR=$(PWD)/vhci-hcd-$(HCD_V)/linux/2.6.32/drivers/usb/core
 
 vhci-hcd-$(HCD_V).tar.bz2: 
 	wget $(BASE_URL)/linux%20kernel%20module/$@
