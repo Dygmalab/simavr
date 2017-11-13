@@ -67,7 +67,7 @@ int main(int argc, char *argv[])
 		char path[1024];
 		uint32_t base, size;
 
-		uint8_t * boot = read_ihex_file("/tmp/arduino-sketch-DB5E8967374B107190C82CEEB8DD4891/test.ino.hex", &size, &base);
+		uint8_t * boot = read_ihex_file("./output/test.ino.hex", &size, &base);
 		if (!boot) {
 			fprintf(stderr, "%s: Unable to load %s\n", argv[0], path);
 			exit(1);
