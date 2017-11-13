@@ -63,6 +63,7 @@ ${firmware}: ${arduino_builder}
 modules:
 	-sudo insmod ../vhci/vhci-hcd-1.14/usb-vhci-hcd.ko
 	-sudo insmod ../vhci/vhci-hcd-1.14/usb-vhci-iocifc.ko
+	sleep 1
 
 rmmodules:
 	-sudo rmmod usb-vhci-iocifc
