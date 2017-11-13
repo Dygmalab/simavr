@@ -32,3 +32,6 @@ At this point start something to read the terminal:
     miniterm.py /dev/ttyACM0 115200       
 
 And you should see numbers being printed from the simulated sketch via the virtual com port!
+
+Unfortunately, changing the test to use the Keyboard results in a core dump for
+me.
